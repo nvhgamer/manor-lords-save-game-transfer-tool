@@ -29,12 +29,35 @@ if ($help) {
     Write-Host "[-help] [-gameInstallNumber <gameInstallNumber>] [-baseDir <baseDir>] [-destinationDir <destinationDir>] [-deleteExisting <deleteExisting>] [-timeDiffMinutes <timeDiffMinutes>]" -ForegroundColor DarkGray
     Write-Host
     Write-Host "Parameters:" -ForegroundColor Yellow
-    Write-Host "  -help:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Show this help message." -ForegroundColor Gray
-    Write-Host "  -gameInstallNumber:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the game installation number." -ForegroundColor Gray
-    Write-Host "  -baseDir:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the base directory for the game files." -ForegroundColor Gray
-    Write-Host "  -destinationDir:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the destination directory for the game files." -ForegroundColor Gray
-    Write-Host "  -deleteExisting:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify whether to delete existing files. Accepts true or false." -ForegroundColor Gray
-    Write-Host "  -timeDiffMinutes:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the time difference in minutes." -ForegroundColor Gray
+    Write-Host "  -help " -NoNewline -ForegroundColor DarkGreen; Write-Host "(optional):" -NoNewline -ForegroundColor Magenta; Write-Host " Show this help message." -ForegroundColor Gray
+
+    Write-Host "  -gameInstallNumber " -NoNewline -ForegroundColor DarkGreen; Write-Host "(optional):" -NoNewline -ForegroundColor Magenta; Write-Host " Specify the unique identifier for the game installation. This number is used to locate the correct game files for transfer." -ForegroundColor Gray
+
+    Write-Host "  -baseDir " -NoNewline -ForegroundColor DarkGreen; Write-Host "(optional):" -NoNewline -ForegroundColor Magenta
+    Write-Host " Specify the base directory where the game files are currently stored. The default path is '" -NoNewline -ForegroundColor Gray
+    Write-Host "C:\Users\" -NoNewline -ForegroundColor Yellow
+    Write-Host "[Your Username]" -NoNewline -ForegroundColor Cyan
+    Write-Host "\AppData\Local\Packages\ManorLords\LocalCache\Local\ManorLords\Saves'." -ForegroundColor Yellow
+
+    Write-Host "  -destinationDir " -NoNewline -ForegroundColor DarkGreen; Write-Host "(optional):" -NoNewline -ForegroundColor Magenta
+    Write-Host " Specify the destination directory where the game files should be transferred to. The default path is '" -NoNewline -ForegroundColor Gray
+    Write-Host "C:\Users\" -NoNewline -ForegroundColor Yellow
+    Write-Host "[Your Username]" -NoNewline -ForegroundColor Cyan
+    Write-Host "\AppData\Local\ManorLords\Saves'." -ForegroundColor Yellow
+
+    Write-Host "  -deleteExisting " -NoNewline -ForegroundColor DarkGreen; Write-Host "(optional):" -NoNewline -ForegroundColor Magenta; Write-Host " Specify whether to delete existing files in the destination directory before the transfer. Accepts " -NoNewline -ForegroundColor Gray
+    Write-Host "'true' or 'false'" -NoNewline -ForegroundColor Yellow
+    Write-Host ". Default is " -NoNewline -ForegroundColor Gray
+    Write-Host "'false'" -NoNewline -ForegroundColor Yellow
+    Write-Host ". If " -NoNewline -ForegroundColor Gray
+    Write-Host "'true'" -NoNewline -ForegroundColor Yellow
+    Write-Host ", any existing files in the destination directory will be deleted before the transfer. If " -NoNewline -ForegroundColor Gray
+    Write-Host "'false'" -NoNewline -ForegroundColor Yellow
+    Write-Host ", the transfer will fail if there are existing files in the destination directory." -ForegroundColor Gray
+
+    Write-Host "  -timeDiffMinutes " -NoNewline -ForegroundColor DarkGreen; Write-Host "(optional):" -NoNewline -ForegroundColor Magenta; Write-Host " Specify the time difference in minutes to consider for file synchronization. Only files that have been modified within this time difference will be transferred. Default is " -NoNewline -ForegroundColor Gray
+    Write-Host "'15'" -NoNewline -ForegroundColor Yellow
+    Write-Host ", meaning all files will be transferred regardless of when they were last modified." -ForegroundColor Gray
     exit
 }
 
