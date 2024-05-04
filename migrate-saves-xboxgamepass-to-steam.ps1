@@ -2,6 +2,9 @@
 
 param (
     [Parameter(Mandatory=$false)]
+    [switch]$help,
+
+    [Parameter(Mandatory=$false)]
     [string]$gameInstallNumber,
 
     [Parameter(Mandatory=$false)]
@@ -16,6 +19,24 @@ param (
     [Parameter(Mandatory=$false)]
     [int]$timeDiffMinutes = 15
 )
+
+if ($help) {
+    Write-Host "Description: " -NoNewline -ForegroundColor Yellow
+    Write-Host "This script transfers Manor Lords save files from Xbox Game Pass to Steam. By nvhgamer 2024." -ForegroundColor Cyan
+    Write-Host
+    Write-Host "Usage: " -NoNewline -ForegroundColor Yellow 
+    Write-Host "migrate-saves-xboxgamepass-to-steam.ps1 " -NoNewline -ForegroundColor Gray
+    Write-Host "[-help] [-gameInstallNumber <gameInstallNumber>] [-baseDir <baseDir>] [-destinationDir <destinationDir>] [-deleteExisting <deleteExisting>] [-timeDiffMinutes <timeDiffMinutes>]" -ForegroundColor DarkGray
+    Write-Host
+    Write-Host "Parameters:" -ForegroundColor Yellow
+    Write-Host "  -help:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Show this help message." -ForegroundColor Gray
+    Write-Host "  -gameInstallNumber:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the game installation number." -ForegroundColor Gray
+    Write-Host "  -baseDir:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the base directory for the game files." -ForegroundColor Gray
+    Write-Host "  -destinationDir:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the destination directory for the game files." -ForegroundColor Gray
+    Write-Host "  -deleteExisting:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify whether to delete existing files. Accepts true or false." -ForegroundColor Gray
+    Write-Host "  -timeDiffMinutes:" -NoNewline -ForegroundColor DarkGreen; Write-Host " Specify the time difference in minutes." -ForegroundColor Gray
+    exit
+}
 
 Write-Host "Starting the migration script..."
 
