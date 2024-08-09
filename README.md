@@ -22,7 +22,7 @@ This script serves two main purposes:
 
 2. It converts the Xbox save file style to the Steam save file style, making the save files compatible with both platforms.
 
-The Xbox save files are located in `C:\Users\[Your Username]\AppData\Local\Packages\HoodedHorse.ManorLords_znaey1dw2bdpr`. The save game thumbnails and Steam's save data are stored in `C:\Users\[Your Username]\\AppData\Local\ManorLords\`.
+The Xbox save files are located in `C:\Users\[Your Username]\AppData\Local\Packages\HoodedHorse.ManorLords_znaey1dw2bdpr`. The save game thumbnails and Steam's save data are stored in `C:\Users\[Your Username]\AppData\Local\ManorLords\`.
 
 If the `-deleteExisting` flag is enabled, the script will overwrite any existing files in the destination directory, ensuring that the most recent save files are always used.
 
