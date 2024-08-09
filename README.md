@@ -22,13 +22,13 @@ This script serves two main purposes:
 
 2. It converts the Xbox save file style to the Steam save file style, making the save files compatible with both platforms.
 
-The Xbox save files are located in `C:\Users\niels\AppData\Local\Packages\HoodedHorse.ManorLords_znaey1dw2bdpr`. The save game thumbnails and Steam's save data are stored in `C:\Users\niels\AppData\Local\ManorLords\`.
+The Xbox save files are located in `C:\Users\[Your Username]\AppData\Local\Packages\HoodedHorse.ManorLords_znaey1dw2bdpr`. The save game thumbnails and Steam's save data are stored in `C:\Users\[Your Username]\\AppData\Local\ManorLords\`.
 
 If the `-deleteExisting` flag is enabled, the script will overwrite any existing files in the destination directory, ensuring that the most recent save files are always used.
 
 ## Usage
 
-To use the script, open a PowerShell terminal and navigate to the directory containing the script. Then, run the script with the desired parameters. For example:
+To use the script, open a PowerShell terminal and navigate to the directory containing the script. Then, run the script with the desired parameters. For example:      
 
 ```powershell
 .\migrate-saves-xboxgamepass-to-steam.ps1 -gameInstallNumber "000900000AE4F5E0_0000000000000000000000006677A913" -deleteExisting $True
